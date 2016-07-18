@@ -1,1 +1,1 @@
-FROM aneesh14/custom_python
+FROM aneesh14/custom_python:v1
