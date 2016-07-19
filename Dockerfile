@@ -59,10 +59,15 @@ EXPOSE 8000-8100
 # create ssh key # commented because of eclipse che disk space restrictions
 RUN rm -rf ~/ssh/id_rsa* && ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
 
+
+# restarting postgres sql server 
+RUN echo "sudo service postgresql restart" >> ~/.bashrc
+
 # user bash shell
 CMD source ~/.bashrc
 CMD tailf /dev/null
-ENTRYPOINT sudo service postgresql restart && bash
+# entry point not works as expected in eclipse che
+# ENTRYPOINT sudo service postgresql restart && bash
 
 
 
