@@ -1,0 +1,51 @@
+[
+    {
+        "name": "django-sample-project",
+        "displayName": "django-sample-project",
+        "path": "/ib_service",
+        "description": "A django sample project.",
+        "projectType": "python",
+        "mixins": [],
+        "attributes": {},
+        "modules": [],
+        "problems": [],
+        "source": {
+            "location": "https://github.com/anush0247/ib_service",
+            "type": "github",
+            "parameters": {}
+        },
+        "commands": [
+            {
+                "commandLine": ". /usr/local/bin/virtualenvwrapper.sh; \nworkon ${current.project.relpath};\ncd ${current.project.path} &&\npython manage.py runserver 0.0.0.0:8000",
+                "name": "runserver",
+                "attributes": {
+                    "previewUrl": "${server.port.8000}"
+                },
+                "type": "custom"
+            },
+            {
+                "commandLine": ". /usr/local/bin/virtualenvwrapper.sh; mkvirtualenv ${current.project.relpath}; ",
+                "name": "setup_virtualenv",
+                "attributes": {
+                    "previewUrl": ""
+                },
+                "type": "custom"
+            },
+            {
+                "commandLine": ". /usr/local/bin/virtualenvwrapper.sh; \nworkon ${current.project.relpath};\ncd ${current.project.path} && pip install -r requirements*; exit",
+                "name": "install_requirements",
+                "attributes": {
+                    "previewUrl": ""
+                },
+                "type": "custom"
+            }
+        ],
+        "links": [],
+        "category": "python",
+        "tags": [
+            "python",
+            "django",
+            "ibuild"
+        ]
+    }
+]
