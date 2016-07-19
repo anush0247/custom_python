@@ -57,7 +57,7 @@ WORKDIR /projects
 EXPOSE 8000-8100
 
 # create ssh key # commented because of eclipse che disk space restrictions
-# RUN rm -rf ~/ssh/id_rsa* && ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
+RUN rm -rf ~/ssh/id_rsa* && ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
 
 # user bash shell
 CMD tailf /dev/null
