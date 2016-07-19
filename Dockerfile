@@ -60,8 +60,8 @@ EXPOSE 8000-8100
 RUN rm -rf ~/ssh/id_rsa* && ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
 
 # user bash shell
-CMD tailf /dev/null
 CMD source ~/.bashrc
+CMD tailf /dev/null
 ENTRYPOINT sudo service postgresql restart && bash
 
 
